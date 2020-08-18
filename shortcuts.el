@@ -1,5 +1,10 @@
-;; Vincent Perrier 07-05-2020
 (provide 'shortcuts)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq cpp-set-style "k&r")
+(setq cpp-basic-offset 2)
+
 
 (global-set-key (kbd "<f2> <f2>")
                 'ff-find-other-file)
@@ -18,4 +23,4 @@
   (if (string-suffix-p ".md" buffer-file-name t)
       (shell-command (concat "pandoc -o doc.pdf " buffer-file-name))))
 
-(add-hook 'after-save-hook 'gen-pdf )   
+(add-hook 'after-save-hook 'gen-pdf )
